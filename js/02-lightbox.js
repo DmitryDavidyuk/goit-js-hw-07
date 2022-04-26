@@ -1,11 +1,11 @@
 import { galleryItems } from './gallery-items.js';
-// Change code below this line
 
+// Change code below this line
 console.log(galleryItems);
 
 const gallery = document.querySelector(".gallery")
 const cardsMarkup = createGalleryCardMarkup(galleryItems)
-gallery.insertAdjacentHTML('beforeend', cardsMarkup)
+gallery.insertAdjacentHTML('beforeend', cardsMarkup);
 
 function createGalleryCardMarkup(items) {
     return items.map(({ preview, original, description }) => {
@@ -16,3 +16,8 @@ function createGalleryCardMarkup(items) {
     `;
     }).join("");
 }
+
+new SimpleLightbox('.gallery a', {
+    captionsData: 'alt',
+    captionDelay: 250,
+});

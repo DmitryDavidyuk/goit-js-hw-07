@@ -9,9 +9,10 @@ gallery.addEventListener('click', onGalleryElClick)
 
 function createGalleryCardMarkup(items) {
     return items.map(({ preview, original, description }) => {
+        
         return `
     <div class="gallery__item">
-        <a class="gallery__link" href=#">
+        <a class="gallery__link" href="${original}">
             <img
                 class="gallery__image"
                 src="${preview}"
@@ -25,6 +26,7 @@ function createGalleryCardMarkup(items) {
 }
 
 function onGalleryElClick(e) {
+    e.preventDefault();
     if (!e.target.classList.contains('gallery__image')) {
         return;
     }
